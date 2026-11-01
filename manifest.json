@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Quercus Media Gallery Pro",
+  "version": "1.0.0",
+  "description": "YouTube shortcuts, dual-video sync, custom skip duration, and stream swapping for Quercus Media Gallery.",
+  "permissions": [
+    "storage",
+    "*://*.utoronto.ca/*",
+    "*://*.kaltura.com/*",
+    "*://*.kalturacdn.com/*"
+  ],
+  "browser_action": {
+    "default_title": "Quercus Media Settings",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.utoronto.ca/*",
+        "*://*.kaltura.com/*",
+        "*://*.kalturacdn.com/*"
+      ],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
